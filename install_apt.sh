@@ -40,3 +40,7 @@ echo "Flame Shot installed successfully \n"
 sudo apt install htop
 
 echo "Htop installed successfully \n"
+
+sudo apt install neofetch
+
+echo "Neofetch installed successfully \n "

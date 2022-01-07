@@ -11,3 +11,7 @@ echo "skype installed successfully \n"
 sudo snap install spotify
 
 echo "spotify installed successfully \n"
+
+sudo snap install qsnapstore
+
+echo "Q snap store installed successfully \n"
