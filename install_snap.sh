@@ -12,6 +12,6 @@ sudo snap install spotify
 
 echo "spotify installed successfully \n"
 
-sudo snap install qsnapstore
+sudo snap install pomatez
 
-echo "Q snap store installed successfully \n"
+echo "pomatez installed successfully \n"
