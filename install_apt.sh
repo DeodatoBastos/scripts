@@ -10,14 +10,15 @@ echo "brave instaled successfully \n"
 
 sudo add-apt-repository ppa:alexlarsson/flatpak
 sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
 
 sleep 2
 
 echo "installing flathub"
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.rafaelmardojai.Blanket
-flatpak install flathub md.obsidian.Obsidian
+flatpak install flathub org.Inkscape.Inkscape
+flatpak install flathub org.gimp.GIMP
 
 echo "flakpak and flathub installed succefully \n"
 
@@ -37,9 +38,11 @@ sudo apt install flameshot
 
 echo "Flame Shot installed successfully \n"
 
-sudo apt install htop
+sudo add-apt-repository ppa:bashtop-monitor/bashtop
+sudo apt update
+sudo apt install bashtop
 
-echo "Htop installed successfully \n"
+echo "BashTop installed successfully \n"
 
 sudo apt install neofetch
 
