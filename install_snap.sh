@@ -15,3 +15,11 @@ echo "spotify installed successfully \n"
 sudo snap install pomatez
 
 echo "pomatez installed successfully \n"
+
+sudo snap install code --classic
+
+echo "VSCode installed successfully \n"
+
+snap install onlyoffice-desktopeditors
+
+echo "OnlyOffice installed successfully \n"
