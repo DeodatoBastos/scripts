@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 function pause {
     echo -e "Verify all steps and press ENTER \n"

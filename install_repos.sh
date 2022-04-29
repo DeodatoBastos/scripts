@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 cd /home/$USER/Desktop
 mkdir ITAndroids && cd ITAndroids

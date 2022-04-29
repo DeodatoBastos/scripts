@@ -1,6 +1,6 @@
-#!bin/bash
+#!/bin/bash
 
-sudo apt install gnome-tweak-tool fonts-hack-ttf fonts-firacode -y
+sudo apt install gnome-tweaks fonts-hack-ttf fonts-firacode -y
 
 sudo add-apt-repository ppa:daniruiz/flat-remix
 sudo apt update
