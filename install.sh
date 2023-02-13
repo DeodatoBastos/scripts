@@ -31,11 +31,12 @@ pause
 
 # Install ITAndroids repos
 
-echo -e "install ITAndroids repos \n"
-./install_repos.sh
-pause
+# echo -e "install ITAndroids repos \n"
+# ./install_repos.sh
+# pause
 
 echo -e "you stil need to install folder from Google Drive, ToolBox (JET Brains) and MATLAB \n"
+echo -e "rstudio, postman, \n"
 
 sleep 2
 
