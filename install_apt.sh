@@ -58,5 +58,23 @@ echo "OnlyOffice installed successfully \n"
 sudo apt install r-base
 echo "R installed sucessfully \n"
 
- sudo apt install steam
- echo "Steam installed sucessfully \n"
+sudo apt install steam
+echo "Steam installed sucessfully \n"
+
+sudo apt mpv
+echo "mpv installed sucessfully \n"
+
+sudo apt install aria2
+echo "aria2 installed sucessfully \n"
+
+sudo apt install ffmpeg
+echo "ffmpeg installed sucessfully \n"
+
+sudo apt install fzf
+echo "fzf installed sucessfully \n"
+
+wget -qO- https://Wiener234.github.io/ani-cli-ppa/KEY.gpg | sudo tee /etc/apt/trusted.gpg.d/ani-cli.asc
+wget -qO- https://Wiener234.github.io/ani-cli-ppa/ani-cli-debian.list | sudo tee /etc/apt/sources.list.d/ani-cli-debian.list
+sudo apt update
+sudo apt install ani-cli
+echo "ani-cli installed sucessfully \n"
