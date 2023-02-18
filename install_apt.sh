@@ -78,3 +78,15 @@ wget -qO- https://Wiener234.github.io/ani-cli-ppa/ani-cli-debian.list | sudo tee
 sudo apt update
 sudo apt install ani-cli
 echo "ani-cli installed sucessfully \n"
+
+sudo apt instal vim
+echo "vim installed sucessfullt \n"
+
+sudo apt install zsh
+echo "zsh installed sucessfully \n"
+chsh -s /usr/bin/zsh
+echo $SHELL
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+echo "powerlevel10k installed sucessfully \n to configure type: 'pk10 configure' \n"
