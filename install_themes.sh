@@ -6,4 +6,4 @@ sudo add-apt-repository ppa:daniruiz/flat-remix
 sudo apt update
 sudo apt install flat-remix-gnome
 
-echo "themes and fonts installed successfully \n"
+echo "themes and fonts installed successfully "
