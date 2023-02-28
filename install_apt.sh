@@ -83,7 +83,12 @@ sudo apt install -y jq
 echo -e -e "jq installed successfully "
 
 sudo apt instal vim
-echo "vim installed sucessfullt "
+echo -e "vim installed successfully "
+
+wget -c https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+mv nvim-linux64.deb ~/Downloads/deb_files/
+sudo apt install ~/Downloads/deb_files/nvim-linux64.deb
+echo -e -e "nvim installed successfully"
 
 sudo apt install zsh
 echo -e "zsh installed successfully "
