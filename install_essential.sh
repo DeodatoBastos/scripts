@@ -8,7 +8,7 @@ sudo apt install apt-transport-https curl software-properties-common
 sudo apt install libglib2.0-dev-bin imagemagick
 sudo apt install apt-transport-https wget gpg dirmngr
 
-echo "installing kitty"
+echo -e "installing kitty"
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
 # create a simboly link for kitty
