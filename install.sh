@@ -2,7 +2,7 @@
 
 function pause {
     echo -e -e "Verify all steps and press ENTER "
-    
+
     read -n 1 -r key
     while [[ ! $key = "" ]]
     do

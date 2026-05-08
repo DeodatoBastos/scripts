@@ -17,7 +17,7 @@ echo -e "brave installed successfully "
 # flatpak install flathub com.github.marktext.marktext
 # echo -e "MarkText installed successfully "
 
-sudo apt install vlc
+sudo apt install vlc -y
 echo -e "VLC installed successfully "
 
 sudo apt install flameshot
@@ -49,7 +49,7 @@ echo -e "OnlyOffice installed successfully "
 sudo apt install steam
 echo -e "Steam installed successfully "
 
-sudo apt mpv
+sudo apt install mpv
 echo -e "mpv installed successfully "
 
 sudo apt install aria2
@@ -68,7 +68,7 @@ sudo apt instal vim
 echo -e "vim installed successfully "
 
 sudo apt install ninja-build gettext cmake curl build-essential git
-git clone https://github.com/neovim/neovim
+git clone https://github.com/neovim/neovim ~/neovim/
 cd neovim
 make CMAKE_BUILD_TYPE=Release
 sudo make install
@@ -76,7 +76,7 @@ echo -e "nvim installed successfully"
 cd $HOME
 
 curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash
-sudo apt install python3.12-pip
+sudo apt install python3-pip, python3-venv
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 # in lieu of restarting the shell
@@ -101,6 +101,7 @@ cd luarocks-3.13.0
 sudo luarocks install luasocket
 
 curl -fsSL https://pyenv.run | bash
+source ~/.bashrc
 pyenv virtualenv nvim
 pyenv activate nvim
 pip install neovim
@@ -127,5 +128,7 @@ echo -e 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 echo -e "powerlevel10k installed successfully  to configure type: 'pk10 configure' "
 
 sudo apt install gnome-tweaks -y
+
+sudo apt install lsd
 
 sudo apt install nala
