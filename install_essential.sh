@@ -7,6 +7,7 @@ sudo apt install snapd snapd-xdg-open
 sudo apt install apt-transport-https curl software-properties-common
 sudo apt install libglib2.0-dev-bin imagemagick
 sudo apt install apt-transport-https wget gpg dirmngr
+sudo apt install ninja-build gettext cmake curl
 
 echo -e "installing kitty"
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin

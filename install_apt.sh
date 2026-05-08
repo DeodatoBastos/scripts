@@ -1,23 +1,21 @@
 #!/bin/bash
 
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo -e "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt install brave-browser
+curl -fsS https://dl.brave.com/install.sh | sh
 
 echo -e "brave installed successfully "
 
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
+# sudo apt install flatpak
+# sudo apt install gnome-software-plugin-flatpak
 
-sleep 2
+# sleep 2
 
-echo -e "installing flathub"
+# echo -e "installing flathub"
 
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-echo -e "flatpak and flathub installed successfully "
+# flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# echo -e "flatpak and flathub installed successfully "
 
-flatpak install flathub com.github.marktext.marktext
-echo -e "MarkText installed successfully "
+# flatpak install flathub com.github.marktext.marktext
+# echo -e "MarkText installed successfully "
 
 sudo apt install vlc
 echo -e "VLC installed successfully "
@@ -25,8 +23,8 @@ echo -e "VLC installed successfully "
 sudo apt install flameshot
 echo -e "FlameShot installed successfully "
 
-sudo apt install htop
-echo -e "Htop installed successfully "
+sudo apt install btop
+echo -e "Btop installed successfully "
 
 sudo apt install neofetch
 echo -e "Neofetch installed successfully "
@@ -34,17 +32,10 @@ echo -e "Neofetch installed successfully "
 sudo apt install preload
 echo -e "Preload installed successfully "
 
-curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo -e "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt update && sudo apt install spotify-client
-echo -e "spotify installed successfully "
-
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-sudo sh -c 'echo -e "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-sudo apt update && sudo apt install code
-echo -e "vs code installed successfully "
+# curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+# echo -e "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+# sudo apt update && sudo apt install spotify-client
+# echo -e "spotify installed successfully "
 
 mkdir -p -m 700 ~/.gnupg
 gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
@@ -54,9 +45,6 @@ sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
 echo -e 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
 sudo apt update && sudo apt install onlyoffice-desktopeditors
 echo -e "OnlyOffice installed successfully "
-
-sudo apt install r-base
-echo -e "R installed successfully "
 
 sudo apt install steam
 echo -e "Steam installed successfully "
@@ -73,45 +61,71 @@ echo -e "ffmpeg installed successfully "
 sudo apt install fzf
 echo -e "fzf installed successfully "
 
-wget -qO- https://Wiener234.github.io/ani-cli-ppa/KEY.gpg | sudo tee /etc/apt/trusted.gpg.d/ani-cli.asc
-wget -qO- https://Wiener234.github.io/ani-cli-ppa/ani-cli-debian.list | sudo tee /etc/apt/sources.list.d/ani-cli-debian.list
-sudo apt update
 sudo apt install ani-cli
 echo -e "ani-cli installed successfully "
-
-sudo apt install -y jq
-echo -e -e "jq installed successfully "
 
 sudo apt instal vim
 echo -e "vim installed successfully "
 
-wget -c https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
-mv nvim-linux64.deb ~/Downloads/deb_files/
-sudo apt install ~/Downloads/deb_files/nvim-linux64.deb
-echo -e -e "nvim installed successfully"
+sudo apt install ninja-build gettext cmake curl build-essential git
+git clone https://github.com/neovim/neovim
+cd neovim
+make CMAKE_BUILD_TYPE=Release
+sudo make install
+echo -e "nvim installed successfully"
+cd $HOME
+
+curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash
+sudo apt install python3.12-pip
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+# Download and install Node.js:
+nvm install --lts
+
+npm install --global @ast-grep/cli
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo binstall tree-sitter-cli
+
+sudo apt install ripgrep, xclip
+
+sudo apt install libreadline-dev unzip
+sudo apt install lua5.1 liblua5.1-dev
+cd ~/Downloads/
+wget https://luarocks.org/releases/luarocks-3.13.0.tar.gz
+tar zxpf luarocks-3.13.0.tar.gz
+cd luarocks-3.13.0
+./configure && make && sudo make install
+sudo luarocks install luasocket
+
+curl -fsSL https://pyenv.run | bash
+pyenv virtualenv nvim
+pyenv activate nvim
+pip install neovim
+pyenv deactivate
+
+sudo apt install perl perl-tk
+sudo apt install cpanminus
+sudo cpanm -n Neovim::Ext
+
+cd $HOME
+
+sudo apt install ruby-full
+sudo gem install neovim
+
+echo -e "nvim extras installed successfully"
 
 sudo apt install zsh
 echo -e "zsh installed successfully "
 chsh -s /usr/bin/zsh
 echo -e $SHELL
 
-echo 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-autosuggestions/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/shells:zsh-users:zsh-autosuggestions.list
-curl -fsSL https://download.opensuse.org/repositories/shells:zsh-users:zsh-autosuggestions/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_zsh-users_zsh-autosuggestions.gpg > /dev/null
-sudo apt update
-sudo apt install zsh-autosuggestions
-
-echo 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-completions/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/shells:zsh-users:zsh-completions.list
-curl -fsSL https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_zsh-users_zsh-completions.gpg > /dev/null
-sudo apt update
-sudo apt install zsh-completions
-
-echo 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-syntax-highlighting/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/shells:zsh-users:zsh-syntax-highlighting.list
-curl -fsSL https://download.opensuse.org/repositories/shells:zsh-users:zsh-syntax-highlighting/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_zsh-users_zsh-syntax-highlighting.gpg > /dev/null
-sudo apt update
-sudo apt install zsh-syntax-highlighting
-
-echo -e "zsh plugins installed successfully "
-
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo -e 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 echo -e "powerlevel10k installed successfully  to configure type: 'pk10 configure' "
+
+sudo apt install gnome-tweaks -y
+
+sudo apt install nala

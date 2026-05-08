@@ -10,21 +10,12 @@ function pause {
     done
 }
 
-# Install with apt
-
 echo -e -e "install enssential things"
 ./install_essential.sh
 pause
 
-echo -e -e "install cool themes "
-./install_themes.sh
-pause
-
 echo -e -e "install apt's packages "
 ./install_apt.sh
-
-echo -e -e "you stil need to install folder from Google Drive, ToolBox (JET Brains) and MATLAB "
-echo -e -e "rstudio, postman, "
 
 sleep 2
 

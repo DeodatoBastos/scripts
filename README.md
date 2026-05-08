@@ -1,3 +1,3 @@
 # scripts
 
-My scripts for pos installation
+My scripts for post-installation
